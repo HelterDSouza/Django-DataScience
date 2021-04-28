@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     "crispy_forms",
 ]
 
-CRSIPY_TEMPLATE_PACK = "bootstrap4"
+CRSIPY_TEMPLATE_PACK = "bootstrap4"  # usar o bootstrap4 no crsipy from
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -132,8 +132,8 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "templates/static"]
 
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"  # url para acessar as imagens
+MEDIA_ROOT = BASE_DIR / "media"  # pasta onde ficara localizadas as imagens
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

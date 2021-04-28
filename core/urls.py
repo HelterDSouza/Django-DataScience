@@ -22,5 +22,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
 ]
 
+
+# adiciona um caminho (url) para os arquivos staticos, settings.py
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# adiciona um caminho (url) para as imagens, settings.py
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
