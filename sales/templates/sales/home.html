@@ -12,5 +12,13 @@
     {{form|crispy}}
     <button type="submit" class='btn btn-primary mt-3'>Submit</button>
 </form>
+<br>
+{% if sales_df %}
+{{sales_df|safe}}
+{{position_df|safe}}
 
+{% else %}
+no data
+
+{% endif %}
 {% endblock content %}hrlo

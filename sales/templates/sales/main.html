@@ -4,8 +4,9 @@
 {% block content %}
 
 {% for sale in sales %}
-
-<a href="{{sale.get_absolute_url}}">{{sale.transaction_id}}</a>
+<div class="card mb-3">
+    <a class='card-body' href="{{sale.get_absolute_url}}">{{sale.transaction_id}}</a>
+</div>
 {% endfor %}
 
 
