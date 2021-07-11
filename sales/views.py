@@ -2,12 +2,16 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 
+from .form import SalesSearchForm
+
 # Create your views here.
 from .models import Sale
 
 
 def home_view(request):
-    return render(request, "sales/home.html", {})
+    form = SalesSearchForm(request.POST or None)
+    context = {"form": form}
+    return render(request, "sales/home.html", context)
 
 
 class SaleListView(ListView):
