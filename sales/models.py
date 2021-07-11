@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from django.utils import timezone
 
 from .utils import generate_transaction_id_code
@@ -32,6 +33,9 @@ class Sale(models.Model):
     salesman = models.ForeignKey("profiles.Profile", on_delete=models.CASCADE)
     created = models.DateTimeField(blank=True)
     update = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("sales:detail", kwargs={"pk": self.pk})
 
     def save(self, *args, **kwargs):
         if self.transaction_id == "":
